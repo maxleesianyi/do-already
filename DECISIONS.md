@@ -10,6 +10,37 @@
 - **Accountability:** The user marks a task complete or missed. Each missed task adds $100; at three misses, a pre-agreed $300 spa voucher unlocks. No purchase or message sending occurs.
 - **Experience:** A mobile-first web app with a warm, playful tone, while avoiding shaming, surveillance, or relationship-health claims.
 
-## Build summary — append at completion
+## Build summary — 16 July 2026
 
-This section will be completed after the final build, testing, and deployment. It will record what was built today, alternatives considered, what Codex accelerated, and the user decisions made.
+### What we built today
+
+- A complete mobile-first Promise Keeper dashboard with fictional starting data: two missed promises, one completed promise, and a $200 meter.
+- Pasted-message capture, fictional sample conversations, an editable AI draft, a browser-only promise dashboard, complete/missed actions, a $100-per-miss meter, and a $300 spa-voucher unlock with a copyable message.
+- A protected server-side GPT-5.6 extraction route, plus a deliberately limited local sample fallback when no API key is configured.
+- Build Week records: README, testing steps, changelog, environment template, and this decision log.
+- A public GitHub repository with separate commits for the product, documentation, and environment template.
+
+### Alternatives considered
+
+- **Native mobile app:** rejected for the MVP because a mobile-friendly web app is faster to build, test, and share.
+- **Supabase, accounts, and cloud history:** postponed. Browser-only storage keeps the first version fast and private.
+- **WhatsApp/Telegram access, screenshots, calendar sync, push reminders, and real Telegram sends:** excluded to avoid permissions, unsupported integrations, and privacy risk.
+- **Automatic penalties or purchases:** excluded. The user marks a task missed; no purchase or message is sent automatically.
+- **A generic task-list approach:** rejected because the main value is GPT extracting an editable promise from conversational wording.
+
+### What Codex accelerated
+
+Codex challenged the initial concept one decision at a time, narrowed it to a demoable working loop, set up the project, implemented the mobile interface and server route, prepared privacy language and testing instructions, created the repository, and maintained the Build Week documentation and commit history.
+
+### Decisions made by the project owner
+
+- The final name is **Promise Keeper**.
+- The initial story is you and your wife; every saved instruction is assigned to you.
+- The MVP uses Singapore time and permits promises with **No date yet**.
+- The product is playful by default but avoids shaming or relationship-health claims.
+- Every missed task adds **$100**. At **$300**, the fixed pre-agreed reward is a **$300 spa voucher** chosen by the wife.
+- The demo begins with two missed fictional promises, then uses “Jason needs his swimming gear tomorrow” as the final AI extraction and reward-unlock moment.
+
+### Verification note
+
+The source code and interaction flow are complete. The first local build verification is currently blocked by a package-linking failure in the OneDrive-synchronised workspace (`pnpm` reports missing linked package files after setup). Move or clone the repository to a normal local folder, run `pnpm install`, set `OPENAI_API_KEY`, and run `pnpm build` before the final submission. This is an environment issue, not a known product-flow issue.
