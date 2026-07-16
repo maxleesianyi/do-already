@@ -17,6 +17,7 @@ The demo uses a fictional husband-and-wife scenario. The broader idea is suitabl
 - Mark promises completed or missed.
 - Add $100 per missed promise and unlock a pre-agreed $300 spa voucher at three misses.
 - Copy a warm reward message; no automatic purchase or message is sent.
+- Optional hackathon demo integration: a consented private Telegram group can trigger a one-tap **Save promise** card for messages from one allowlisted sender.
 
 ## Safety and privacy
 
@@ -25,6 +26,18 @@ The demo uses a fictional husband-and-wife scenario. The broader idea is suitabl
 - Original pasted message text is not retained after analysis.
 - AI drafts can be wrong and must be reviewed before saving.
 - The playful meter is mutually agreed, optional product framing—not a judgement of relationship health.
+- The Telegram webhook accepts only the configured demo group and sender ID. It stores only the structured promise after one-tap approval, never the original message text.
+
+## Telegram hackathon demo setup
+
+This optional path is for the filmed demo. The normal pasted-message path remains available to everyone.
+
+1. Create a bot with `@BotFather`; keep its token secret.
+2. Add the bot, you, and your wife to a private demo group. Make the bot an admin, then both people press **Start** in a private chat with the bot once.
+3. Configure the five `TELEGRAM_*` values in the hosted environment. Use numeric Telegram IDs, not names.
+4. Set the bot webhook to `https://YOUR-DEPLOYED-URL/api/telegram/webhook` and supply the same `TELEGRAM_WEBHOOK_SECRET` as Telegram's secret token.
+
+The bot ignores all messages except text from the configured group and your wife's exact account ID. GPT sends a card only for high-confidence commitments. You choose **Save promise** or **Not a promise**; ambiguous messages create no notification.
 
 ## Run locally
 

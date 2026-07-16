@@ -20,3 +20,11 @@
 ## GPT check
 
 With `OPENAI_API_KEY` configured, paste a new harmless fictional message. Confirm a fresh structured draft is returned. Without a key, the three built-in samples use a clearly limited local demo fallback so the interface remains testable.
+
+## Telegram demo check
+
+1. Configure all `TELEGRAM_*` values and deploy the app.
+2. Send a clear fictional commitment from the allowlisted wife account in the private demo group.
+3. Confirm the user receives a private Telegram card with **Save promise** and **Not a promise**.
+4. Tap **Save promise**, refresh the dashboard, and confirm the promise appears.
+5. Send a message from another account or group and confirm no card is sent.

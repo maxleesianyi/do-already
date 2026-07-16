@@ -75,6 +75,23 @@ export default function Home() {
   useEffect(() => {
     window.localStorage.setItem("promise-keeper-promises", JSON.stringify(promises));
   }, [promises]);
+  useEffect(() => {
+    const loadTelegramPromises = async () => {
+      try {
+        const response = await fetch("/api/promises");
+        const payload = await response.json() as { promises?: PromiseItem[] };
+        if (!payload.promises?.length) return;
+        setPromises((current) => {
+          const byId = new Map(current.map((item) => [item.id, item]));
+          payload.promises.forEach((item) => byId.set(item.id, item));
+          return [...byId.values()];
+        });
+      } catch { /* Telegram storage is optional for the paste demo. */ }
+    };
+    void loadTelegramPromises();
+    const timer = window.setInterval(loadTelegramPromises, 5000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   const missedTotal = useMemo(
     () => promises.filter((item) => item.status === "missed").length * 100,
@@ -117,6 +134,7 @@ export default function Home() {
 
   function updateStatus(id: string, status: Status) {
     setPromises((current) => current.map((item) => (item.id === id ? { ...item, status } : item)));
+    void fetch(`/api/promises/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status }) });
   }
 
   function resetDemo() {

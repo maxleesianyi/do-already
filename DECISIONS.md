@@ -44,3 +44,10 @@ Codex challenged the initial concept one decision at a time, narrowed it to a de
 ### Verification note
 
 The source code and interaction flow are complete. The first local build verification is currently blocked by a package-linking failure in the OneDrive-synchronised workspace (`pnpm` reports missing linked package files after setup). Move or clone the repository to a normal local folder, run `pnpm install`, set `OPENAI_API_KEY`, and run `pnpm build` before the final submission. This is an environment issue, not a known product-flow issue.
+
+## 16 July 2026 — Telegram demo enhancement
+
+- The filmed demo uses a private Telegram group containing the user, wife, and bot; the public demo retains pasted text and fictional samples.
+- The webhook accepts only the configured group and the wife's exact Telegram account ID. It ignores all other messages.
+- GPT sends a private one-tap **Save promise** or **Not a promise** card only for high-confidence commitments. No promise is saved without the user's approval.
+- Confirmed Telegram promises are stored in D1 so they appear in the web dashboard. Original Telegram message text is never stored.
