@@ -78,7 +78,7 @@ export default function Home() {
   useEffect(() => {
     const loadTelegramPromises = async () => {
       try {
-        const response = await fetch("/api/promises");
+        const response = await fetch("/api/promises", { cache: "no-store" });
         const payload = await response.json() as { promises?: PromiseItem[] };
         if (!payload.promises?.length) return;
         setPromises((current) => {
