@@ -21,7 +21,10 @@ export async function POST(request: Request) {
   if (update.callback_query) return callback(update);
 
   const message = update.message;
-  if (!message?.text || !same(message.chat.id, process.env.TELEGRAM_DEMO_CHAT_ID) || !same(message.from?.id, process.env.TELEGRAM_WIFE_USER_ID)) {
+  const isApprovedSender = same(message?.from?.id, process.env.TELEGRAM_WIFE_USER_ID);
+  const isConfiguredDemoGroup = same(message?.chat.id, process.env.TELEGRAM_DEMO_CHAT_ID);
+  const isYourTemporaryTestGroup = same(message?.from?.id, process.env.TELEGRAM_USER_ID) && Boolean(message?.chat && message.chat.id < 0);
+  if (!message?.text || !isApprovedSender || (!isConfiguredDemoGroup && !isYourTemporaryTestGroup)) {
     return Response.json({ ok: true });
   }
 
