@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       await db.update(promises).set({
         title: extracted.promise.title,
         category: extracted.promise.category,
-        dueText: extracted.promise.dueText || target.dueText,
+        dueText: extracted.promise.dueText && extracted.promise.dueText !== "No date yet" ? extracted.promise.dueText : target.dueText,
         relevantPerson: extracted.promise.relevantPerson || target.relevantPerson,
         preparation: extracted.promise.preparation || target.preparation,
         confidence: extracted.promise.confidence,
