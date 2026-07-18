@@ -77,3 +77,8 @@ The source code and interaction flow are complete. The first local build verific
 - The cool-light Interviewer Buddy theme is now the default, while midnight remains one tap away through an icon-only, labelled theme control.
 - The product name is the primary heading, the task count is supporting one-line copy, and the reward stamp is removed from the Penalty Meter.
 - Reward values are constrained to clear SGD $10 increments, preventing the earlier $1-offset values such as $491 or $501.
+
+## 18 July 2026 — Header clarity correction
+
+- The compact theme and reset controls sit above the product heading. The product name is reduced to a single unbroken mobile line, followed by the supporting task count.
+- The theme control now uses a simple half-light, half-dark appearance glyph instead of the earlier custom sun-and-moon treatment.

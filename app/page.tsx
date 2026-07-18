@@ -219,11 +219,6 @@ export default function Home() {
     <main className="app-shell">
       <section className="phone-frame" aria-label="Do Already dashboard">
         <header className="topbar">
-          <div>
-            <h1 className="wordmark"><span>You </span><strong>Do Already</strong><span> or not?</span></h1>
-            <p className="waiting-label">{waitingLabel}</p>
-            <p className="header-subtitle">Live from your chat with The Wife</p>
-          </div>
           <div className="topbar-actions">
             <button
               className="theme-toggle"
@@ -232,9 +227,14 @@ export default function Home() {
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
               title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
-              <span className={`theme-icon ${theme}`} aria-hidden="true" />
+              <span className="theme-icon" aria-hidden="true" />
             </button>
             <button className="reset-button" onClick={resetDemo} disabled={isResetting}>{isResetting ? "Resetting…" : "Reset demo"}</button>
+          </div>
+          <div className="header-copy">
+            <h1 className="wordmark"><span>You </span><strong>Do Already</strong><span> or not?</span></h1>
+            <p className="waiting-label">{waitingLabel}</p>
+            <p className="header-subtitle">Live from your chat with The Wife</p>
           </div>
         </header>
 
