@@ -38,6 +38,13 @@
   --notice-button: rgba(11, 13, 15, 0.14);
   --notice-button-hover: rgba(11, 13, 15, 0.24);
   --notice-ink: #101419;
+  --wife-skin: #f7c5a5;
+  --wife-skin-shadow: #e7aa8b;
+  --wife-hair: #3a2935;
+  --wife-ink: #3b2a32;
+  --wife-cheek: #e98190;
+  --wife-jewellery: #d89d32;
+  --wife-halo: #fff8ee;
   --frame-surface: rgba(21, 26, 32, 0.8);
   --section-outline: rgba(244, 239, 231, 0.16);
   --hero-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
@@ -84,6 +91,13 @@
   --notice-button: rgba(255, 255, 255, 0.2);
   --notice-button-hover: rgba(255, 255, 255, 0.3);
   --notice-ink: #ffffff;
+  --wife-skin: #f7c5a5;
+  --wife-skin-shadow: #e7aa8b;
+  --wife-hair: #342536;
+  --wife-ink: #3b2a32;
+  --wife-cheek: #e98190;
+  --wife-jewellery: #bc7c12;
+  --wife-halo: #fff8ee;
   --frame-surface: rgba(255, 255, 255, 0.84);
   --section-outline: rgba(64, 86, 214, 0.24);
   --hero-shadow: 0 14px 32px rgba(16, 19, 35, 0.12);
@@ -155,11 +169,17 @@ h3 { font-size: 1rem; letter-spacing: -0.03em; line-height: 1.35; }
 .reward-edit-button { position: absolute; top: 20px; right: 20px; min-height: 40px; padding: 0 11px; border-radius: 10px; background: var(--accent-soft); color: var(--accent-strong); box-shadow: inset 0 0 0 1px var(--accent-outline); font-size: 0.73rem; font-weight: 800; transition-duration: 180ms; transition-property: background-color, color, transform; transition-timing-function: var(--ease); }
 .reward-edit-button:hover { background: var(--accent-hover); }
 .meter-journey { margin-top: 18px; }
-.meter-faces { display: flex; align-items: center; justify-content: space-between; height: 34px; padding: 0 1px; }
-.wife-face { position: relative; display: block; width: 30px; height: 30px; overflow: hidden; border-radius: 50%; background: var(--amber-soft); box-shadow: inset 0 0 0 1px var(--amber-outline), 0 3px 8px rgba(16, 19, 35, 0.08); }
-.wife-face::before { position: absolute; top: 3px; left: 4px; width: 22px; height: 11px; border-radius: 50% 50% 38% 38%; background: var(--amber-strong); content: ""; }
-.wife-face-detail::before { position: absolute; top: 12px; left: 8px; width: 3px; height: 3px; border-radius: 50%; background: var(--amber-strong); box-shadow: 11px 0 0 var(--amber-strong); content: ""; }
-.wife-face-detail::after { position: absolute; top: 18px; left: 8px; width: 14px; height: 5px; border: 2px solid var(--amber-strong); border-top: 0; border-radius: 0 0 10px 10px; content: ""; }
+.meter-faces { display: flex; align-items: end; justify-content: space-between; height: 50px; padding: 0 2px 2px; }
+.wife-avatar { position: relative; display: block; width: 42px; height: 42px; border-radius: 15px 15px 17px 17px; background: var(--wife-halo); box-shadow: inset 0 0 0 1px rgba(16, 19, 35, 0.08), 0 5px 12px rgba(16, 19, 35, 0.12); }
+.wife-avatar-hair { position: absolute; z-index: 1; top: 4px; left: 6px; width: 30px; height: 32px; border-radius: 17px 17px 13px 13px; background: var(--wife-hair); }
+.wife-avatar-hair::before { position: absolute; top: -4px; left: 3px; width: 10px; height: 10px; border-radius: 50%; background: var(--wife-hair); box-shadow: 14px 0 0 var(--wife-hair); content: ""; }
+.wife-avatar-hair::after { position: absolute; top: 8px; left: 2px; width: 26px; height: 10px; border-radius: 50% 50% 30% 30%; background: var(--wife-hair); content: ""; }
+.wife-avatar-face { position: absolute; z-index: 2; top: 10px; left: 9px; width: 24px; height: 27px; border-radius: 46% 46% 42% 42%; background: linear-gradient(135deg, var(--wife-skin), var(--wife-skin-shadow)); box-shadow: inset 0 -2px 0 rgba(105, 55, 42, 0.09); }
+.wife-avatar-face::before { position: absolute; top: 8px; left: 6px; width: 3px; height: 4px; border-radius: 50%; background: var(--wife-ink); box-shadow: 9px 0 0 var(--wife-ink); content: ""; }
+.wife-avatar-face::after { position: absolute; top: 16px; left: 7px; width: 10px; height: 5px; border: 2px solid var(--wife-ink); border-top: 0; border-radius: 0 0 9px 9px; content: ""; }
+.wife-avatar-blush { position: absolute; top: 14px; left: 2px; width: 4px; height: 3px; border-radius: 50%; background: var(--wife-cheek); box-shadow: 16px 0 0 var(--wife-cheek); opacity: 0.78; }
+.wife-avatar-earring { position: absolute; z-index: 3; top: 29px; right: 5px; width: 5px; height: 5px; border-radius: 50%; background: var(--wife-jewellery); box-shadow: 0 1px 0 rgba(59, 42, 50, 0.18); }
+.wife-avatar-sparkle { position: absolute; z-index: 4; top: 4px; right: 4px; width: 7px; height: 7px; background: var(--wife-jewellery); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
 .meter-track { height: 10px; margin: 3px 0 10px; overflow: hidden; border-radius: 99px; background: var(--meter-track); }
 .meter-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--teal)); transition: width 320ms var(--ease); }
 .playful-note { color: var(--muted); font-size: 0.74rem; font-weight: 500; line-height: 1.45; }

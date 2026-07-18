@@ -319,7 +319,7 @@ export default function Home() {
           </div>
           <button className="reward-edit-button" type="button" onClick={startRewardEdit} aria-expanded={isEditingReward} aria-controls="reward-settings">Edit reward</button>
           <div className="meter-journey" role="img" aria-label="The Wife wins whether the task is completed or the reward is unlocked">
-            <div className="meter-faces" aria-hidden="true"><span className="wife-face"><span className="wife-face-detail" /></span><span className="wife-face"><span className="wife-face-detail" /></span></div>
+            <div className="meter-faces" aria-hidden="true"><WifeAvatar /><WifeAvatar /></div>
             <div className="meter-track" aria-hidden="true"><span style={{ width: `${meterProgress}%` }} /></div>
           </div>
           <p className="playful-note">Every miss brings the reward closer.</p>
@@ -394,4 +394,8 @@ function PromiseCard({ item, onStatus }: { item: PromiseItem; onStatus: (id: str
 function HistoryCard({ item, onEdit }: { item: PromiseItem; onEdit: (item: PromiseItem) => void }) {
   const missed = item.status === "missed";
   return <article className="history-card"><button type="button" className="history-edit-button" onClick={() => onEdit(item)} aria-label={`Edit ${item.title}`}><span className={`history-status ${missed ? "missed" : "complete"}`}>{missed ? "MISS" : "DONE"}</span><span className="history-copy"><h3>{item.title}</h3><p>{item.dueText}</p></span><strong>{missed ? "+$100" : "Done already"}</strong><span className="history-chevron" aria-hidden="true">›</span></button></article>;
+}
+
+function WifeAvatar() {
+  return <span className="wife-avatar"><span className="wife-avatar-hair" /><span className="wife-avatar-face"><span className="wife-avatar-blush" /></span><span className="wife-avatar-earring" /><span className="wife-avatar-sparkle" /></span>;
 }
