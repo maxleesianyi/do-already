@@ -34,7 +34,7 @@ Codex challenged the initial concept one decision at a time, narrowed it to a de
 
 ### Decisions made by the project owner
 
-- The final name is **Promise Keeper**.
+- The initial working name was **Promise Keeper**; the final submitted product name is **Do Already?**.
 - The initial story is you and your wife; every saved instruction is assigned to you.
 - The MVP uses Singapore time and permits promises with **No date yet**.
 - The product is playful by default but avoids shaming or relationship-health claims.

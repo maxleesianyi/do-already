@@ -12,3 +12,6 @@
 ## 18 July 2026
 
 - Added confidence-based Telegram routing: clear high-confidence tasks are saved automatically, medium-confidence tasks receive a private approval card, and low-confidence messages are ignored.
+- Added active-task continuity: a clear follow-up can merge into one active task, while ambiguous follow-ups are ignored rather than duplicated.
+- Added editable recent-task history, an editable reward, and a polished light/dark mobile dashboard for the final demo.
+- Prepared the public repository for Build Week judging with an MIT licence, a judge-focused README, sample-data guidance, a testing guide, and a submission checklist.
