@@ -108,7 +108,7 @@ export default function Home() {
   async function resetDemo() {
     setIsResetting(true);
     try {
-      const response = await fetch("/api/promises", { method: "DELETE" });
+      const response = await fetch("/api/promises/reset", { method: "POST" });
       if (!response.ok) throw new Error("Reset failed");
       setPromises(starterPromises);
       setNotice({ message: "Demo reset to its original state.", tone: "neutral" });
