@@ -57,3 +57,7 @@ The source code and interaction flow are complete. The first local build verific
 - Clear, high-confidence tasks from the allowlisted sender are saved to Do Already? automatically, without a private approval card.
 - Medium-confidence tasks require the user's existing private **Save promise** or **Not a promise** decision.
 - Low-confidence and ordinary chat messages are ignored, avoiding unnecessary notifications and accidental promises.
+
+## 18 July 2026 â€” Cost-conscious model choice
+
+- The Telegram commitment classifier uses GPT-5.6 Luna, the cost-sensitive tier of the GPT-5.6 family, while preserving the same structured extraction and confidence-routing behaviour.

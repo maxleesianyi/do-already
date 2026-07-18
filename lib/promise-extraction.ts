@@ -100,7 +100,7 @@ export async function extractPromise(message: string): Promise<{
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: "gpt-5.6",
+      model: "gpt-5.6-luna",
       instructions: `You extract commitments from everyday messages for Do Already?. Today in Singapore is ${today}. Every commitment is assigned to the app user. Detect a clear promise or task, classify it, resolve dates only when supported by the text, otherwise use "No date yet". Use the name stated in the message for relevantPerson, otherwise "The Wife". Be concise. Return no promise for ordinary chat. Set confidence to High only when the message clearly asks the app user to do a specific, actionable task and the essential context is explicit. Set Medium when it might be a task but the intent, ownership, timing, or details need the user's judgment. Set Low for vague, conversational, or incomplete items that should not become a promise automatically.`,
       input: message,
       text: {
