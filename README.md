@@ -15,11 +15,12 @@ The GitHub repository is public. The live demo is usable without signing in.
 ## What to try
 
 1. Open the live demo on a phone or narrow browser window.
-2. Review the active task list, **Penalty Meter**, editable reward, and recent task history.
-3. Tap a recent task to correct its wording or toggle between **Do already** and **Miss**.
-4. Use **Reset demo** to return the sample dashboard to its original state.
+2. Tap **Try it out** and send a clear instruction in the Telegram-style demo chat. A high-confidence task is saved immediately to the dashboard; a less certain task asks for approval.
+3. Review the active task list, **Penalty Meter**, editable reward, and recent task history.
+4. Tap a recent task to correct its wording or toggle between **Do already** and **Miss**.
+5. Use **Reset demo** to return the sample dashboard to its original state.
 
-The optional Telegram flow is included for the filmed hackathon demonstration. It needs the configured private group, allowlisted Telegram accounts, and environment values listed below.
+The in-app chat is a Telegram-style simulation: it uses the same task-recognition route, but it does not send Telegram messages or add test tasks to the shared Telegram data. The optional real Telegram flow is included for the filmed hackathon demonstration. It needs the configured private group, allowlisted Telegram accounts, and environment values listed below.
 
 ## Sample data
 
