@@ -388,7 +388,7 @@ export default function Home() {
 
   return (
     <main className={`app-shell ${isDemoChatOpen ? "demo-chat-open" : ""}`}>
-      <button className="try-demo-button demo-launcher" type="button" onClick={() => setIsDemoChatOpen((current) => !current)} aria-label={isDemoChatOpen ? "Close Try it out demo" : "Open Try it out demo"} aria-expanded={isDemoChatOpen} aria-controls="try-it-out-chat"><span aria-hidden="true">←</span>Try it out</button>
+      {!isDemoChatOpen && <button className="try-demo-button demo-launcher" type="button" onClick={() => setIsDemoChatOpen(true)} aria-label="Open Try it out demo" aria-expanded={false} aria-controls="try-it-out-chat"><span aria-hidden="true">←</span>Try it out</button>}
       <div className="dashboard-column">
         <div className="app-controls" aria-label="Dashboard controls">
             <button
@@ -482,11 +482,11 @@ export default function Home() {
       {isDemoChatOpen && (
         <aside className="demo-chat-panel" id="try-it-out-chat" aria-label="Telegram-style task demo">
           <section className="demo-chat" ref={demoChatRef} aria-labelledby="demo-chat-title">
-            <header className="demo-chat-header">
+            <button className="demo-chat-header" type="button" onClick={() => setIsDemoChatOpen(false)} aria-label="Close Try it out demo">
               <WifeAvatar mood="annoyed" className="demo-chat-avatar" />
-              <div><p id="demo-chat-title">The Wife + Do Already?</p><span>Demo group chat · 2 members</span></div>
-              <button type="button" className="demo-chat-close" onClick={() => setIsDemoChatOpen(false)} aria-label="Close demo chat">×</button>
-            </header>
+              <span className="demo-chat-heading"><span id="demo-chat-title">The Wife + Do Already?</span><span>Demo group chat · 2 members</span></span>
+              <span className="demo-chat-close" aria-hidden="true">×</span>
+            </button>
             <div className="demo-chat-wall" aria-live="polite">
               <p className="demo-chat-date">TODAY</p>
               {demoChatMessages.map((message) => (
